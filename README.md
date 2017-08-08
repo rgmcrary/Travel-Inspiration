@@ -5,3 +5,6 @@
 * Rich McRary (rgmcrary)
 * Drew Mercer (drewwmercer)
 * Cody Sloan (codyhsloan)
+
+## Check it out
+https://goo.gl/cKhYNR 
