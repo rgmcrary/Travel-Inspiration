@@ -1,13 +1,7 @@
- 
-
-
 # project-1
-
-
- Steven Sober (SobeDog007)
-
-monadurban
-Rich McRary
-Drew Mercer
-
- Cody Sloan
+##Team Members
+Steven Sober (SobeDog007)
+Mona Durban (monadurban)
+Rich McRary (rgmcrary)
+Drew Mercer (@drewwmercer)
+Cody Sloan (codyhsloan)
