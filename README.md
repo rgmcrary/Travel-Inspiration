@@ -7,4 +7,4 @@
 * Cody Sloan (codyhsloan)
 
 ## Check it out
- https://goo.gl/cKhYNRm
+  <a href="https://goo.gl/cKhYNR" target="_blank">click for project-1</a>
