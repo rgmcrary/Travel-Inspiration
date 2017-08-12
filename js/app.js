@@ -167,7 +167,7 @@ function getImages(location) {
 }
 
 
-// Wiki API
+// Weather API
 function getWeatherData(location) {
   var query = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + location + '")';
 
