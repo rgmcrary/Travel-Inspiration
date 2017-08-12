@@ -25,9 +25,11 @@ $(document).ready(function() {
 
   // Search Button
   $(".searchBtn").on("click", function() {
+    preventDefault(); //adding this trying to prevent page from reloading
     handleClick($("input").val());
   });
   $("input").keydown(function(e) {
+    e.preventDefault(); //adding this trying to prevent page from reloading
     if (e.keyCode === 13) {
       handleClick($("input").val());
     }
