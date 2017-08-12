@@ -212,9 +212,18 @@ function getWeatherData(location) {
   });
 }
 
+var recentSearch = [];
+
+
 // Firebase API
 function saveToFirebase(location) {
   console.log("city searched: " + location);
+
+recentSearch.html(snapshot.val().searched);
+  console.log("recent searches: " + recentSearch);
+
+
+newName.html(snapshot.val().trainName);
 
   database.ref().push({
     searched: location
