@@ -213,11 +213,10 @@ function getWeatherData(location) {
 }
 
 //Firebase API
-
 function saveToFirebase(location) {
-  console.log("citySearch: " + citySearch)
-    
-    database.ref().push({
-      searched: location
-  
+  console.log("citySearch: " + citySearch);
+
+  database.ref().push({
+    searched: location
+  });
 }
