@@ -212,9 +212,9 @@ function getWeatherData(location) {
   });
 }
 
-//Firebase API
+// Firebase API
 function saveToFirebase(location) {
-  console.log("citySearch: " + citySearch);
+  console.log("city searched: " + location);
 
   database.ref().push({
     searched: location
