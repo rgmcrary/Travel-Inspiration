@@ -12,7 +12,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 $(document).ready(function() {
-  // Google Slick
+  // Slick responsive carousel
   $("#carousel").slick({
     dots: true,
     infinite: true,
