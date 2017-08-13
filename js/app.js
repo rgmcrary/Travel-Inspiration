@@ -1,3 +1,5 @@
+var mapInitialized = false;
+
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyD1wYOxE3hqoAV9F3FBNXaQGXLWtDG3MMU",
@@ -75,6 +77,9 @@ function getGeoLocation(location) {
 
 // Google Places API
 function getPlacesData(lng, lat) {
+  $('#mapRow').append('<input id="pac-input" class="controls" type="text" placeholder="Search Box">');
+  $('#map').height('600');
+
   // call places api
   var map = new google.maps.Map($("#map")[0], {
     center: { lng: lng, lat: lat },
@@ -82,8 +87,9 @@ function getPlacesData(lng, lat) {
     mapTypeId: "roadmap"
   });
 
-  var input = $("#pac-input");
-  input.show();
+  var input = $('#pac-input');
+  
+  
   var searchBox = new google.maps.places.SearchBox(input[0]);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input[0]);
 
@@ -188,13 +194,13 @@ function getWeatherData(location) {
     "?" +
     $.param({
       q: query,
-      format: "json",
+      format: 'json',
       env: "store"
     });
 
   $.getJSON(weatherURL).done(function(response) {
     console.log(response);
-    $("#weather").html("");
+    $('#weather').html('');
     //query.results/channel.item.forcast
     for (
       var i = 0;
@@ -204,13 +210,13 @@ function getWeatherData(location) {
       var result = response.query.results.channel.item.forecast[i];
       // $('#weather').append('<li>' + result.date + ': ' + result.text + '</li>');
       var html = '<div class="dayBlock">';
-      html += '<div class="dateStyle">' + result.date + "</div>";
-      html += '<div class="dayStyle">' + result.day + "</div>";
-      html += '<div class="highStyle">' + result.high + "</div>";
-      html += '<div class="lowStyle">' + result.low + "</div>";
-      html += '<div class="textStyle">' + result.text + "</div>";
-      html += "</div>";
-      $("#weather").append(html);
+      html += '<div class="dateStyle">' + result.date + '</div>';
+      html += '<div class="dayStyle">' + result.day + '</div>';
+      html += '<div class="highStyle">' + result.high + '</div>';
+      html += '<div class="lowStyle">' + result.low + '</div>';
+      html += '<div class="textStyle">' + result.text + '</div>';
+      html += '</div>';
+      $('#weather').append(html);
     }
   });
 }
