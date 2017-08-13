@@ -29,6 +29,26 @@ p {
     width: 100%;
   }
 
+img {
+  height: auto;
+  width:100%;
+}
+
+#output {
+  display: inline-block;
+}
+
+#output img {
+  height: 250px;
+  width: 250px;
+  padding: 8px;
+}
+
+/*#map {
+  height: 600px;
+  width: 1170px;
+}*/
+
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;
