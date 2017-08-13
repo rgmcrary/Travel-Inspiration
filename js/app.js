@@ -22,14 +22,14 @@ $(document).ready(function() {
     fade: true,
     cssEase: "linear",
     autoplay: true,
-    autoplaySpeed: 3000
+    autoplaySpeed: 3000,
   });
 
   // Search Button
   $(".searchBtn").on("click", function() {
     handleClick($("input").val());
   });
-  $("input").keydown(function(e) {
+  $("#locationText").keydown(function(e) {
     if (e.keyCode === 13) {
       handleClick($("input").val());
     }
@@ -37,15 +37,23 @@ $(document).ready(function() {
 });
 
 function handleClick(location) {
-  $(".errorText").hide();
-  if (location !== "") {
+  $("#locationText").removeClass('invalid');
+  $('#locationLabel').hide();
+  var isValid = checkInput(location);
+  if (isValid) {
     getImages(location);
     getGeoLocation(location);
     getWeatherData(location);
     saveToFirebase(location);
   } else {
-    $(".errorText").show();
+    $("#locationText").addClass('invalid');
+    $('#locationLabel').text('Please enter a valid location');
+    $('#locationLabel').show();
   }
+}
+
+function checkInput(input) {
+  return /^([a-zA-Z ]{2,})$/.test(input);
 }
 
 // Google Maps API
@@ -204,7 +212,7 @@ function getWeatherData(location) {
     //query.results/channel.item.forcast
     for (
       var i = 0;
-      i < response.query.results.channel.item.forecast.length;
+      i < (response.query.results.channel.item.forecast.length - 3);
       i++
     ) {
       var result = response.query.results.channel.item.forecast[i];

@@ -44,10 +44,18 @@ img {
   padding: 8px;
 }
 
-/*#map {
-  height: 600px;
-  width: 1170px;
-}*/
+#pac-input{
+  background: white;
+  color: black;
+  width: 30%;
+  height:28px;
+  margin-top: 10px;
+  padding-left: 5px;
+}
+
+#pac-input:focus {
+  border-bottom: none !important;
+}
 
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
@@ -74,4 +82,16 @@ img {
 
 footer.page-footer {
   margin: 0;
+}
+
+.dayBlock {
+  display: inline-block;
+  padding: 25px;
+  text-align: center;
+  border:2px solid turquoise;
+}
+
+.error{
+  color:#F44336;
+  display:none;
 }
