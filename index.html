@@ -19,6 +19,11 @@
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">Going Somewhere?</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="#photos">Photos</a></li>
+      <li><a href="#map">Map</a></li>
+      <li><a href="#forecast">Forecast</a></li>
+      </ul>
       <!--a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a-->
     </div>
   </nav>
@@ -55,7 +60,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h2 class="header col s12 light">Photos</h2>
+          <h2 class="header col s12 light"><a name="photos"></a>Photos</h2>
         </div>
       </div>
     </div>
@@ -78,7 +83,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h2 class="header col s12 light">Maps</h2>
+          <h2 class="header col s12 light"><a name="map"></a>Map</h2>
         </div>
       </div>
     </div>
@@ -99,7 +104,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h2 class="header col s12 light">7-Day Weather Forecast</h2>
+          <h2 class="header col s12 light"><a name="forecast"></a>7-Day Weather Forecast</h2>
         </div>
       </div>
     </div>
@@ -109,9 +114,8 @@
   <!-- Weather output - Start -->
   <div class="container">
     <div class="section">
-      <div>
-        <div id="weather">
-          </ul>
+      <div class="row">
+        <div class="col m12 offset-m2" id="weather">
         </div>
       </div>
     </div>
@@ -127,19 +131,9 @@
           <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support
             and continue development on this project and is greatly appreciated.</p>
         </div>
-        <div class="col l3 s12">
+        <div class="col l3 s12 offset-l3">
           <h5 class="white-text">Recently Searched</h5>
           <ul id="recentSearches">
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Placeholder</h5>
-          <ul>
-            <li><a class="white-text" href="#!">City a</a></li>
-            <li><a class="white-text" href="#!">City b</a></li>
-            <li><a class="white-text" href="#!">City c</a></li>
-            <li><a class="white-text" href="#!">City d</a></li>
-            <li><a class="white-text" href="#!">City e</a></li>
           </ul>
         </div>
       </div>
