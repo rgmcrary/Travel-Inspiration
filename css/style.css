@@ -34,10 +34,24 @@ img {
 
 #output img {
   /* height: 25%; */
-  width: 33%;
-  padding: 8px;
+  width: 30%;
+  padding: 4px;
   object-fit: cover;
   max-height: 250px;
+  vertical-align: middle;
+  margin-top: 25px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+#weather {
+  color: white;
+  max-height: 250px;
+  padding: 4px;
+  min-width: 60%;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 #pac-input {
