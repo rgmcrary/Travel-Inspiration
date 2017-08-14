@@ -35,7 +35,7 @@ $(document).ready(function() {
     }
   });
   database.ref().limitToLast(5).on("child_added", function(childSnapshot) {
-    var recommendation = childSnapshot.val();
+    var recent = childSnapshot.val();
     $("#recentSearches").prepend(childSnapshot.val().searched + "</br>");
   });
 });
@@ -242,10 +242,7 @@ function saveToFirebase(location) {
 
   $("#recentSearches").empty();
   database.ref().limitToLast(5).on("child_added", function(childSnapshot) {
-    // Get the recommendation data from the most recent snapshot of data
-    // added to the recommendations list in Firebase
-    recommendation = childSnapshot.val();
-    $("#recentSearches").prepend(recommendation.searched + "</br>");
-    
+  recent = childSnapshot.val();
+    $("#recentSearches").prepend(recent.searched + "</br>");
   });
 }
