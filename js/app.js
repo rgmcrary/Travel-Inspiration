@@ -170,7 +170,7 @@ function getImages(location) {
       q: location,
       image_type: "photo",
       safesearch: true,
-      per_page: 10,
+      per_page: 9,
       category: "travel"
     });
 

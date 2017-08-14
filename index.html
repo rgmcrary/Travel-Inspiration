@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Travel Location Info</title>
 
   <!-- Links  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" />
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css" />
   <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
 </head>
+
 <body>
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
@@ -20,37 +22,35 @@
       <!--a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a-->
     </div>
   </nav>
-  
-  <!--Slick Carousel at top of page -->  
-      <div class="container" id="carousel">
-        <div><a href="javascript:handleClick('barcelona')"><img src="images/barcelona.jpg" alt="barcelona"></a></div>
-        <div><a href="javascript:handleClick('havana')"><img src="images/cuba.jpg" alt="cuba"></a></div>
-        <div><a href="javascript:handleClick('rome')"><img src="images/rome.jpg" alt="rome"></a></div>
-        <div><a href="javascript:handleClick('prague')"><img src="images/prague.jpg" alt="prague"></a></div>
-        <div><a href="javascript:handleClick('tahiti')"><img src="images/tahiti.jpg" alt="tahiti"></a></div>
-        <div><a href="javascript:handleClick('tokyo')"><img src="images/tokyo.jpg" alt="tokyo"></a></div>
-        <div><a href="javascript:handleClick('machu pichu')"><img src="images/machu-pichu.jpg" alt="machu-pichu"></a></div>
-        <div><a href="javascript:handleClick('new york')"><img src="images/new-york.jpg" alt="new-york"></a></div>
-        <div><a href="javascript:handleClick('san francisco')"><img src="images/san-francisco.jpg" alt="san-francisco"></a></div>
-      </div>
-    
 
-<!-- Search field begin (work in progress)-->
+  <!--Slick Carousel at top of page -->
+  <div class="container" id="carousel">
+    <div><a href="javascript:handleClick('barcelona')"><img src="images/barcelona.jpg" alt="barcelona"></a></div>
+    <div><a href="javascript:handleClick('havana')"><img src="images/cuba.jpg" alt="cuba"></a></div>
+    <div><a href="javascript:handleClick('rome')"><img src="images/rome.jpg" alt="rome"></a></div>
+    <div><a href="javascript:handleClick('prague')"><img src="images/prague.jpg" alt="prague"></a></div>
+    <div><a href="javascript:handleClick('tahiti')"><img src="images/tahiti.jpg" alt="tahiti"></a></div>
+    <div><a href="javascript:handleClick('tokyo')"><img src="images/tokyo.jpg" alt="tokyo"></a></div>
+    <div><a href="javascript:handleClick('machu pichu')"><img src="images/machu-pichu.jpg" alt="machu-pichu"></a></div>
+    <div><a href="javascript:handleClick('new york')"><img src="images/new-york.jpg" alt="new-york"></a></div>
+    <div><a href="javascript:handleClick('san francisco')"><img src="images/san-francisco.jpg" alt="san-francisco"></a></div>
+  </div>
+
+  <!-- Search field - Start -->
 
   <div class="container">
     <div class="row">
       <div class="col s12 m12">
         <div class="search-wrapper">
-            <input type="text" class="validate" id="locationText" placeholder="Search for a location">
-            <div id="locationLabel" class="error"></div>
-            <button class="btn btn-default searchBtn">Search</button>   
+          <input type="text" class="validate" id="locationText" placeholder="Search for a location or click an image above">
+          <div id="locationLabel" class="error"></div>
+          <button class="btn btn-default searchBtn">Search</button>
         </div>
       </div>
     </div>
   </div>
 
-<!--  Search field end (work in progress)-->
-
+  <!--  Search field - End -->
 
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
@@ -63,32 +63,31 @@
     <div class="parallax"><img src="images/maldives.jpg" alt="maldives"></div>
   </div>
 
-  <!--Photo output from Pixabay -->
+  <!-- Photo output from Pixabay - Start -->
   <div class="container">
     <div class="section">
       <div class="row">
-      
+
         <div class="col s12" id="output"></div>
       </div>
 
     </div>
   </div>
 
-  <!--Photo output ends -->
-
+  <!-- Photo output from Pixabay - End -->
 
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h2 class="header col s12 light">Google Maps</h2>
+          <h2 class="header col s12 light">Maps</h2>
         </div>
       </div>
     </div>
     <div class="parallax"><img src="images/great-wall.jpg" alt="great-wall"></div>
   </div>
 
-  <!--Map output from Google -->
+  <!-- Map output from Google - Start -->
   <div class="container">
     <div class="section">
       <div class="row" id="mapRow">
@@ -96,29 +95,32 @@
       </div>
     </div>
   </div>
-      
+  <!-- Map output from Google - End -->
+
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h2 class="header col s12 light">Local Weather</h2>
+          <h2 class="header col s12 light">7-Day Weather Forecast</h2>
         </div>
       </div>
     </div>
     <div class="parallax"><img src="images/great-wall.jpg" alt="great-wall"></div>
   </div>
 
+  <!-- Weather output - Start -->
+
   <div class="container">
     <div class="section">
       <div>
-          <div id="weather"></ul>
+        <div id="weather">
+          </ul>
+        </div>
       </div>
     </div>
+    <!-- Weather output - End -->
+
   </div>
-
-      
-      </div>
-
 
   <footer class="page-footer teal">
     <div class="container">
@@ -126,8 +128,6 @@
         <div class="col l6 s12">
           <h5 class="white-text">Company Bio</h5>
           <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Most Searched</h5>
@@ -151,11 +151,11 @@
         </div>
       </div>
     </div>
-     <div class="footer-copyright">
+    <div class="footer-copyright">
       <div class="container">
-      <!-- Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a> -->
+        <!-- Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a> -->
       </div>
-    </div> 
+    </div>
   </footer>
 
 
@@ -165,7 +165,8 @@
   <script src="js/init.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
   <script src="js/app.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO8cVeyvpyuOR_gwywOHo-JohcbtyYSg8&libraries=places"
-    async defer></script>
-  </body>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO8cVeyvpyuOR_gwywOHo-JohcbtyYSg8&libraries=places" async
+    defer></script>
+</body>
+
 </html>
