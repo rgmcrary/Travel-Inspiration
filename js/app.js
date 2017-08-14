@@ -185,10 +185,10 @@ function getImages(location) {
     console.log(response);
 
     for (var i = 0; i < response.hits.length; i++) {
-      makeTags = JSON.stringify(response.hits[i].tags);
-      makeTagsParsed = JSON.parse(makeTags);
-      $("#output").append('<a  target="_blank" href="' + response.hits[i].pageURL + '">' + '<img src="' + response.hits[i].webformatURL + '" />' + '</a>');
-      console.log(makeTags,response.hits[i].tags, makeTagsParsed);
+      //makeTags = JSON.stringify(response.hits[i].tags);
+      //makeTagsParsed = JSON.parse(makeTags);
+      $("#output").append('<a  target="_blank" href="' + response.hits[i].pageURL + '">' + '<img class="z-depth-1 hoverable" src="' + response.hits[i].webformatURL + '" />' + '</a>');
+      //console.log(makeTags,response.hits[i].tags, makeTagsParsed);
       //$("#output").addClass("card-title", makeTags[0]);
       //$(".card").append('<span class="card-title">' + makeTags[0] + '</span>');
     }
@@ -217,6 +217,7 @@ function getWeatherData(location) {
   $.getJSON(weatherURL).done(function(response) {
     console.log(response);
     $("#weather").html("");
+    $("#weather").append('<div class="card-panel teal col m1">Date</br></br>Day</br>High</br>Low</br>Condition</br></div>');
     //query.results/channel.item.forcast
     for (
       var i = 0;
@@ -232,7 +233,8 @@ function getWeatherData(location) {
       html += '<div class="lowStyle">' + result.low + "</div>";
       html += '<div class="textStyle">' + result.text + "</div>";
       html += "</div>";
-      $("#weather").append(html);
+      //$("#weather").append(html);
+      $("#weather").append('<div class="card-panel teal col m1">' + result.date + ' </br>' + result.day +  ' </br>' + result.high + ' </br>' + result.low + ' </br>' + result.text + '</div>');
     }
   });
 }
