@@ -185,7 +185,12 @@ function getImages(location) {
     console.log(response);
 
     for (var i = 0; i < response.hits.length; i++) {
-      $("#output").append('<img src="' + response.hits[i].webformatURL + '"/>');
+      makeTags = JSON.stringify(response.hits[i].tags);
+      makeTagsParsed = JSON.parse(makeTags);
+      $("#output").append('<a  target="_blank" href="' + response.hits[i].pageURL + '">' + '<img src="' + response.hits[i].webformatURL + '" />' + '</a>');
+      console.log(makeTags,response.hits[i].tags, makeTagsParsed);
+      //$("#output").addClass("card-title", makeTags[0]);
+      //$(".card").append('<span class="card-title">' + makeTags[0] + '</span>');
     }
 
     console.log();
