@@ -22,7 +22,7 @@ $(document).ready(function() {
     fade: true,
     cssEase: "linear",
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 3000
   });
 
   // Search Button
@@ -34,11 +34,15 @@ $(document).ready(function() {
       handleClick($("input").val());
     }
   });
+  database.ref().limitToLast(5).on("child_added", function(childSnapshot) {
+    var recommendation = childSnapshot.val();
+    $("#recentSearches").prepend(childSnapshot.val().searched + "</br>");
+  });
 });
 
 function handleClick(location) {
-  $("#locationText").removeClass('invalid');
-  $('#locationLabel').hide();
+  $("#locationText").removeClass("invalid");
+  $("#locationLabel").hide();
   var isValid = checkInput(location);
   if (isValid) {
     getImages(location);
@@ -46,9 +50,9 @@ function handleClick(location) {
     getWeatherData(location);
     saveToFirebase(location);
   } else {
-    $("#locationText").addClass('invalid');
-    $('#locationLabel').text('Please enter a valid location');
-    $('#locationLabel').show();
+    $("#locationText").addClass("invalid");
+    $("#locationLabel").text("Please enter a valid location");
+    $("#locationLabel").show();
   }
 }
 
@@ -85,8 +89,10 @@ function getGeoLocation(location) {
 
 // Google Places API
 function getPlacesData(lng, lat) {
-  $('#mapRow').append('<input id="pac-input" class="controls" type="text" placeholder="Search Box">');
-  $('#map').height('600');
+  $("#mapRow").append(
+    '<input id="pac-input" class="controls" type="text" placeholder="Search Box">'
+  );
+  $("#map").height("600");
 
   // call places api
   var map = new google.maps.Map($("#map")[0], {
@@ -95,9 +101,8 @@ function getPlacesData(lng, lat) {
     mapTypeId: "roadmap"
   });
 
-  var input = $('#pac-input');
-  
-  
+  var input = $("#pac-input");
+
   var searchBox = new google.maps.places.SearchBox(input[0]);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input[0]);
 
@@ -187,8 +192,6 @@ function getImages(location) {
   });
 }
 
-
-
 // Weather API
 
 function getWeatherData(location) {
@@ -202,45 +205,47 @@ function getWeatherData(location) {
     "?" +
     $.param({
       q: query,
-      format: 'json',
+      format: "json",
       env: "store"
     });
 
   $.getJSON(weatherURL).done(function(response) {
     console.log(response);
-    $('#weather').html('');
+    $("#weather").html("");
     //query.results/channel.item.forcast
     for (
       var i = 0;
-      i < (response.query.results.channel.item.forecast.length - 3);
+      i < response.query.results.channel.item.forecast.length - 3;
       i++
     ) {
       var result = response.query.results.channel.item.forecast[i];
       // $('#weather').append('<li>' + result.date + ': ' + result.text + '</li>');
       var html = '<div class="dayBlock">';
-      html += '<div class="dateStyle">' + result.date + '</div>';
-      html += '<div class="dayStyle">' + result.day + '</div>';
-      html += '<div class="highStyle">' + result.high + '</div>';
-      html += '<div class="lowStyle">' + result.low + '</div>';
-      html += '<div class="textStyle">' + result.text + '</div>';
-      html += '</div>';
-      $('#weather').append(html);
+      html += '<div class="dateStyle">' + result.date + "</div>";
+      html += '<div class="dayStyle">' + result.day + "</div>";
+      html += '<div class="highStyle">' + result.high + "</div>";
+      html += '<div class="lowStyle">' + result.low + "</div>";
+      html += '<div class="textStyle">' + result.text + "</div>";
+      html += "</div>";
+      $("#weather").append(html);
     }
   });
 }
-
-// var newRow = $("<tr>");
-// var recentSearch = [];
-// var newSearch = $("<td>");
 
 // Firebase API
 function saveToFirebase(location) {
   console.log("city searched: " + location);
 
-// recentSearch.html(snapshot.val().searched);
-//   console.log("recent searches: " + recentSearch);
-
   database.ref().push({
     searched: location
+  });
+
+  $("#recentSearches").empty();
+  database.ref().limitToLast(5).on("child_added", function(childSnapshot) {
+    // Get the recommendation data from the most recent snapshot of data
+    // added to the recommendations list in Firebase
+    recommendation = childSnapshot.val();
+    $("#recentSearches").prepend(recommendation.searched + "</br>");
+    
   });
 }
