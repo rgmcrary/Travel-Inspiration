@@ -17,15 +17,15 @@ p {
   min-height: 380px;
   line-height: 0;
   height: auto;
-  color: rgba(255,255,255,.9);
+  color: rgba(255, 255, 255, .9);
 }
-  .parallax-container .section {
-    width: 100%;
-  }
+.parallax-container .section {
+  width: 100%;
+}
 
 img {
   height: auto;
-  width:100%;
+  width: 100%;
 }
 
 #output {
@@ -33,16 +33,18 @@ img {
 }
 
 #output img {
-  height: 250px;
-  width: 250px;
+  /* height: 25%; */
+  width: 33%;
   padding: 8px;
+  object-fit: cover;
+  max-height: 250px;
 }
 
-#pac-input{
+#pac-input {
   background: white;
   color: black;
   width: 30%;
-  height:28px;
+  height: 28px;
   margin-top: 10px;
   padding-left: 5px;
 }
@@ -51,7 +53,7 @@ img {
   border-bottom: none !important;
 }
 
-@media only screen and (max-width : 992px) {
+@media only screen and (max-width: 992px) {
   .parallax-container .section {
     position: absolute;
     top: 40%;
@@ -61,7 +63,7 @@ img {
   }
 }
 
-@media only screen and (max-width : 992px) {
+@media only screen and (max-width: 992px) {
   #index-banner .section {
     top: 0;
   }
@@ -82,12 +84,12 @@ footer.page-footer {
   display: inline-block;
   padding: 25px;
   text-align: center;
-  border:2px solid turquoise;
+  border: 2px solid turquoise;
 }
 
-.error{
-  color:#F44336;
-  display:none;
+.error {
+  color: #f44336;
+  display: none;
 }
 
 #recentSearches {
