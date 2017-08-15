@@ -1,4 +1,4 @@
-# project-1
+# Going Somewhere?
 ## Team Members
 * Steven Sober (SobeDog007)
 * Mona Durban (monadurban)
@@ -7,7 +7,7 @@
 * Cody Sloan (codyhsloan)
 
 ## Check it out
-  <a href="https://goo.gl/cKhYNR" target="_blank">click for project-1</a>
+  <a href="https://goo.gl/cKhYNR" target="_blank">click for **Going Somewhere?**</a>
 
 ## See the data
 https://console.firebase.google.com/u/1/project/project-1-175917/database/data/
