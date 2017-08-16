@@ -222,11 +222,11 @@ function getWeatherData(location) {
   $.getJSON(weatherURL).done(function(response) {
     console.log(response);
     $("#weather").html("");
-    $("#weather").append('<div class="card-panel teal col m1">Date</br></br>Day</br>High</br>Low</br>Condition</br></div>');
+    $("#weather").append('<div class="card-panel teal col m1"> Date </br> Day </br> High (F) </br> Low (F) </br> Condition </br></div>');
     //query.results/channel.item.forcast
     for (
       var i = 0;
-      i < response.query.results.channel.item.forecast.length - 3;
+      i < response.query.results.channel.item.forecast.length - 5;
       i++
     ) {
       var result = response.query.results.channel.item.forecast[i];
@@ -239,7 +239,7 @@ function getWeatherData(location) {
       html += '<div class="textStyle">' + result.text + "</div>";
       html += "</div>";
       //$("#weather").append(html);
-      $("#weather").append('<div class="card-panel teal col m1">' + result.date + ' </br>' + result.day +  ' </br>' + result.high + ' </br>' + result.low + ' </br>' + result.text + '</div>');
+      $("#weather").append('<div class="card-panel teal col m2">' + result.date + ' </br>' + result.day +  ' </br>' + result.high + ' </br>' + result.low + ' </br>' + result.text + '</div>');
     }
   });
 }
