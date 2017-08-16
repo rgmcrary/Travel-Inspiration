@@ -113,3 +113,8 @@ footer.page-footer {
 #recentSearches {
   text-transform: capitalize;
 }
+
+.card-panel {
+  margin-left: 15px;
+  margin-right: 15px;
+}
