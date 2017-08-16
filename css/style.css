@@ -2,11 +2,15 @@
 
 nav ul a,
 nav .brand-logo {
-  color: #444;
+  color: #3E0D0D;
 }
 
 p {
   line-height: 2rem;
+}
+
+h2 {
+  font-weight: bold !important;
 }
 
 .button-collapse {
@@ -108,4 +112,9 @@ footer.page-footer {
 
 #recentSearches {
   text-transform: capitalize;
+}
+
+.card-panel {
+  margin-left: 15px;
+  margin-right: 15px;
 }
