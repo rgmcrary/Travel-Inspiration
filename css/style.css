@@ -118,3 +118,7 @@ footer.page-footer {
   margin-left: 5px;
   margin-right: 5px;
 }
+
+.row .col {
+  padding: 0px;
+}
