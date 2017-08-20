@@ -123,7 +123,7 @@ function handleClick(location) {
 }
 
 function checkInput(input) {
-  return /^([a-zA-Z,.- ]{2,})$/.test(input);
+  return /^([a-zA-Z,. ]{2,})$/.test(input);
 }
 
 // Google Maps API
