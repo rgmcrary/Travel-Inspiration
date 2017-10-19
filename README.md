@@ -5,13 +5,13 @@ This app allows the user to look up any global location and have pictures, a loc
 The images in the carousel at the top of the app are also linked to return the same results by clicking the image.
 
 
-## Technologies Used
-- HTML5
-- CSS
-- Materialize
-- JavaScript
-- Firebase
-- API calls
+## Built With
+
+* CSS
+* Firebase
+* HTML5
+* JavaScript
+* Materialize
 
 
 ## Team Members
@@ -21,8 +21,10 @@ The images in the carousel at the top of the app are also linked to return the s
 * Drew Mercer (drewwmercer)
 * Cody Sloan (codyhsloan)
 
+
 ## Check it out
   <a href="https://rgmcrary.github.io/Travel-Inspiration/" target="_blank">click for **Going Somewhere?**</a>
+
 
 ## See the data
 https://console.firebase.google.com/u/1/project/project-1-175917/database/data/
