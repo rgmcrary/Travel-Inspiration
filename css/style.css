@@ -5,6 +5,11 @@ nav .brand-logo {
   color: #444;
 }
 
+.navbar {
+  background: white;
+  position: fixed;
+}
+
 p {
   line-height: 2rem;
 }
@@ -15,6 +20,11 @@ h2 {
 
 .button-collapse {
   color: #26a69a;
+}
+
+.search {
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 
 .parallax-container {
