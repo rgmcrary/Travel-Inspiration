@@ -2,157 +2,160 @@
 <html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Going Somewhere?</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Going Somewhere?</title>
 
-  <!-- Links  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" />
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css" />
-  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <!-- Links  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
 </head>
 
 <body>
-  <nav class="white" role="navigation">
+<nav class="navbar" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Going Somewhere?</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#photos">Photos</a></li>
-        <li><a href="#map">Map</a></li>
-        <li><a href="#forecast">Forecast</a></li>
-      </ul>
-      <!--a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a-->
+        <a id="logo-container" href="#" class="brand-logo">Going Somewhere?</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#photos">Photos</a></li>
+            <li><a href="#map">Map</a></li>
+            <li><a href="#forecast">Forecast</a></li>
+        </ul>
+        <!--a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a-->
     </div>
-  </nav>
+</nav>
 
-  <!-- Slick Carousel at top of page - Start -->
-  <div class="container" id="carousel">
-    <div><a href="javascript:handleClick('barcelona')"><img src="images/barcelona.jpg" alt="barcelona"></a></div>
-    <div><a href="javascript:handleClick('havana')"><img src="images/cuba.jpg" alt="cuba"></a></div>
-    <div><a href="javascript:handleClick('rome')"><img src="images/rome.jpg" alt="rome"></a></div>
-    <div><a href="javascript:handleClick('prague')"><img src="images/prague.jpg" alt="prague"></a></div>
-    <div><a href="javascript:handleClick('tahiti')"><img src="images/tahiti.jpg" alt="tahiti"></a></div>
-    <div><a href="javascript:handleClick('tokyo')"><img src="images/tokyo.jpg" alt="tokyo"></a></div>
-    <div><a href="javascript:handleClick('machu picchu')"><img src="images/machu-picchu.jpg" alt="machu-picchu"></a></div>
-    <div><a href="javascript:handleClick('new york city')"><img src="images/new-york.jpg" alt="new-york"></a></div>
-    <div><a href="javascript:handleClick('san francisco')"><img src="images/san-francisco.jpg" alt="san-francisco"></a></div>
-  </div>
-  <!-- Slick Carousel at top of page - End -->
+<!-- Slick Carousel at top of page - Start -->
+<!--<div class="carousel">-->
+    <!--<div><a href="javascript:handleClick('barcelona')"><img src="images/barcelona.jpg" alt="barcelona"></a></div>-->
+    <!--<div><a href="javascript:handleClick('havana')"><img src="images/cuba.jpg" alt="cuba"></a></div>-->
+    <!--<div><a href="javascript:handleClick('rome')"><img src="images/rome.jpg" alt="rome"></a></div>-->
+    <!--<div><a href="javascript:handleClick('prague')"><img src="images/prague.jpg" alt="prague"></a></div>-->
+    <!--<div><a href="javascript:handleClick('tahiti')"><img src="images/tahiti.jpg" alt="tahiti"></a></div>-->
+    <!--<div><a href="javascript:handleClick('tokyo')"><img src="images/tokyo.jpg" alt="tokyo"></a></div>-->
+    <!--<div><a href="javascript:handleClick('machu picchu')"><img src="images/machu-picchu.jpg" alt="machu-picchu"></a>-->
+    <!--</div>-->
+    <!--<div><a href="javascript:handleClick('new york city')"><img src="images/new-york.jpg" alt="new-york"></a></div>-->
+    <!--<div><a href="javascript:handleClick('san francisco')"><img src="images/san-francisco.jpg" alt="san-francisco"></a>-->
+    <!--</div>-->
+<!--</div>-->
+<!-- Slick Carousel at top of page - End -->
 
-  <!-- Search field - Start -->
-  <div class="container">
+<!-- Search field - Start -->
+<div class="container search">
     <div class="row">
-      <div class="col s12 m12">
-        <div class="search-wrapper">
-          <input type="text" class="validate" id="locationText" placeholder="Search for a city or click an image above for inspiration">
-          <div id="locationLabel" class="error"></div>
-          <button class="btn btn-default searchBtn">Search</button>
+        <div class="col s12 m12">
+            <div class="search-wrapper">
+                <input type="text" class="validate" id="locationText"
+                       placeholder="Search for a city or location">
+                <div id="locationLabel" class="error"></div>
+                <button class="btn btn-default searchBtn">Search</button>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <!--  Search field - End -->
+</div>
+<!--  Search field - End -->
 
-  <div class="parallax-container valign-wrapper">
+<div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h2 class="header col s12"><a name="photos"></a>Photos</h2>
+        <div class="container">
+            <div class="row center">
+                <h2 class="header col s12"><a name="photos"></a>Photos</h2>
+            </div>
         </div>
-      </div>
     </div>
     <div class="parallax"><img src="images/maldives.jpg" alt="maldives"></div>
-  </div>
+</div>
 
-  <!-- Photo output from Pixabay - Start -->
-  <div class="container">
+<!-- Photo output from Pixabay - Start -->
+<div class="container">
     <div class="section">
-      <div class="row">
+        <div class="row">
 
-        <div class="col s12" id="output"></div>
-      </div>
+            <div class="col s12" id="output"></div>
+        </div>
 
     </div>
-  </div>
-  <!-- Photo output from Pixabay - End -->
+</div>
+<!-- Photo output from Pixabay - End -->
 
-  <div class="parallax-container valign-wrapper">
+<div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h2 class="header col s12"><a name="map"></a>Map</h2>
+        <div class="container">
+            <div class="row center">
+                <h2 class="header col s12"><a name="map"></a>Map</h2>
+            </div>
         </div>
-      </div>
     </div>
     <div class="parallax"><img src="images/great-wall.jpg" alt="great-wall"></div>
-  </div>
+</div>
 
-  <!-- Map output from Google - Start -->
-  <div class="container">
+<!-- Map output from Google - Start -->
+<div class="container">
     <div class="section">
-      <div class="row" id="mapRow">
-        <div class="col s12" id="map"></div>
-      </div>
-    </div>
-  </div>
-  <!-- Map output from Google - End -->
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h2 class="header col s12"><a name="forecast"></a>5-Day Weather Forecast</h2>
+        <div class="row" id="mapRow">
+            <div class="col s12" id="map"></div>
         </div>
-      </div>
+    </div>
+</div>
+<!-- Map output from Google - End -->
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+                <h2 class="header col s12"><a name="forecast"></a>5-Day Weather Forecast</h2>
+            </div>
+        </div>
     </div>
     <div class="parallax"><img src="images/grand-canyon.jpg" alt="grand-company"></div>
-  </div>
+</div>
 
-  <!-- Weather output - Start -->
-  <div class="container">
+<!-- Weather output - Start -->
+<div class="container">
     <div class="section">
-      <div class="row">
-        <div class="col m12 offset-m2" id="weather">
+        <div class="row">
+            <div class="col m12 offset-m2" id="weather">
+            </div>
         </div>
-      </div>
     </div>
     <!-- Weather output - End -->
 
-  </div>
+</div>
 
-  <footer class="page-footer teal">
+<footer class="page-footer teal">
     <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Get inspired!</h5>
-          <p class="inspirationalQuote grey-text text-lighten-4"></p>
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Get inspired!</h5>
+                <p class="inspirationalQuote grey-text text-lighten-4"></p>
+            </div>
+            <div class="col l3 s12 offset-l3">
+                <h5 class="white-text">Recently Searched</h5>
+                <ul id="recentSearches">
+                </ul>
+            </div>
         </div>
-        <div class="col l3 s12 offset-l3">
-          <h5 class="white-text">Recently Searched</h5>
-          <ul id="recentSearches">
-          </ul>
-        </div>
-      </div>
     </div>
     <div class="footer-copyright">
-      <div class="container">
-        <!-- Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a> -->
-      </div>
+        <div class="container">
+            <!-- Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a> -->
+        </div>
     </div>
-  </footer>
+</footer>
 
 
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
-  <script src="js/app.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO8cVeyvpyuOR_gwywOHo-JohcbtyYSg8&libraries=places" async
-    defer></script>
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script src="js/app.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO8cVeyvpyuOR_gwywOHo-JohcbtyYSg8&libraries=places" async
+        defer></script>
 </body>
 
 </html>
