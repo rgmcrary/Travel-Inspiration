@@ -8,6 +8,7 @@ nav .brand-logo {
 .navbar {
   background: white;
   position: fixed;
+  z-index: 9999;
 }
 
 p {
